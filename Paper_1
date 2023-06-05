@@ -1,0 +1,22 @@
+/*公道世间唯白发*//*C99标准*/
+/*除模数单位为毫米外，其余参数统一为国际基本单位：米m，质量kg，秒s*/
+/*#define __USE_MINGW_ANSI_STDIO 1*/
+#include <stdio.h>//输入输出库
+#include <math.h>//基本数学运算库
+#include <stdlib.h>//工具函数库 
+#include <string.h>//字符数组
+const double Pi=3.14159265358979,Ee=2.718281828459045;/*Pi and natural constant*/
+const double m_m=5,	alpha_o=20,	N_p=20,	N_g=32;//Modulus, pressure angle and tooth numbers
+const double divide=500.0;//将单双区间的角度范围各分500
+const int DivideNumber=500;//数值积分分割数量
+const double given_error=1e-7;//迭代打断条件 
+const double B_p=40*1e-3,	B_g=30*1e-3;//tooth width
+const double density_p=7.85e3,	density_g=7.85e3;//Material density
+const double R_h_p=0.025,	R_h_g=0.025;
+const double h_p=1,	h_g=1,	c_p=0.25,	c_g=0.25;
+const double E_p=2.06*1e11,	E_g=2.06*1e11;//Young's modulus,steel
+const double upsilon_p=0.27,	upsilon_g=0.27;//possion ratio
+const double mu_p=0.1,	mu_g=0.1;//Coulomb friction coefficient
+double Stiffness_1[1001],Stiffness_2[1001],Stiffness[1001];//预存
+const double error_x=1e-3;//mme-2e-4
+const double error_y=0;//1*1e-4 6*1e-4
